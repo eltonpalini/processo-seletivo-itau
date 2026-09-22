@@ -1,0 +1,38 @@
+@FraudMonitor.BackofficeApi_HostAddress = http://localhost:5052
+
+### 1. Obter Token JWT (Login como Analista de Fraude)
+# @name login
+POST {{FraudMonitor.BackofficeApi_HostAddress}}/api/auth/token
+Content-Type: application/json
+
+{
+  "username": "analyst",
+  "password": "itau@2026"
+}
+
+### Extração do Token para as próximas requisições
+@authToken = {{login.response.body.accessToken}}
+
+### 2. Chamada NÃO autorizada (sem token -> deve retornar 401 Unauthorized)
+GET {{FraudMonitor.BackofficeApi_HostAddress}}/api/fraudalerts
+Accept: application/json
+
+### 3. Obter todas as transações sinalizadas (Autorizado com Bearer Token)
+GET {{FraudMonitor.BackofficeApi_HostAddress}}/api/fraudalerts
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### 4. Filtrar por Risco ALTO (Autorizado)
+GET {{FraudMonitor.BackofficeApi_HostAddress}}/api/fraudalerts?riskLevel=High
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### 5. Filtrar por Risco MÉDIO (Autorizado)
+GET {{FraudMonitor.BackofficeApi_HostAddress}}/api/fraudalerts?riskLevel=Medium
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### 6. Filtrar por Status FLAGGED e Período (Autorizado)
+GET {{FraudMonitor.BackofficeApi_HostAddress}}/api/fraudalerts?status=Flagged&riskLevel=High&startDate=2026-09-18T00:00:00Z&endDate=2026-09-18T23:59:59Z
+Authorization: Bearer {{authToken}}
+Accept: application/json

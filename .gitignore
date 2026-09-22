@@ -1,0 +1,27 @@
+## Build Results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio & VS Code
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Test Results & Coverage
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+coverage.json
+coverage.cobertura.xml
+
+## OS Generated
+.DS_Store
+Thumbs.db
+
+## User Secrets & Local AppSettings
+appsettings.*.local.json
