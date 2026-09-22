@@ -1,0 +1,17 @@
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Infrastructure.deps.json
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Infrastructure.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Infrastructure.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Application.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Domain.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Application.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/bin/Debug/net8.0/FraudMonitor.Domain.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.csproj.AssemblyReference.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.AssemblyInfoInputs.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.AssemblyInfo.cs
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.csproj.CoreCompileInputs.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMon.2BF66C7B.Up2Date
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/refint/FraudMonitor.Infrastructure.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/FraudMonitor.Infrastructure.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Infrastructure/obj/Debug/net8.0/ref/FraudMonitor.Infrastructure.dll

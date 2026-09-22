@@ -1,0 +1,15 @@
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/bin/Debug/net8.0/FraudMonitor.Application.deps.json
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/bin/Debug/net8.0/FraudMonitor.Application.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/bin/Debug/net8.0/FraudMonitor.Application.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/bin/Debug/net8.0/FraudMonitor.Domain.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/bin/Debug/net8.0/FraudMonitor.Domain.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.csproj.AssemblyReference.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.GeneratedMSBuildEditorConfig.editorconfig
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.AssemblyInfoInputs.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.AssemblyInfo.cs
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.csproj.CoreCompileInputs.cache
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMon.859CB844.Up2Date
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/refint/FraudMonitor.Application.dll
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/FraudMonitor.Application.pdb
+/dados/Projects/processo-seletivo-itau-elton/FraudMonitor/src/Application/obj/Debug/net8.0/ref/FraudMonitor.Application.dll
