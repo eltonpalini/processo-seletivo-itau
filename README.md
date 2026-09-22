@@ -62,7 +62,7 @@ FraudMonitor/
 │   ├── Worker/               # Consumidor de eventos em segundo plano e Simulador de fluxo contínuo
 │   └── BackofficeApi/        # API RESTful CQRS para consulta e filtros de analistas de fraude
 └── test/
-    └── FraudMonitor.Tests/   # 16 Testes unitários automatizados (xUnit + Moq)
+    └── FraudMonitor.Tests/   # 19 Testes unitários automatizados (xUnit + Moq)
 ```
 
 ---
@@ -73,13 +73,13 @@ FraudMonitor/
 * [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (ou superior; o projeto já possui `RollForward` configurado para compatibilidade transparente com runtimes modernos).
 
 ### 6.1. Executar os Testes Unitários
-Para rodar a suíte completa de testes automatizados:
+Para rodar a suíte completa de testes automatizados (regras de negócio, orquestrador, filtros de consulta e persistência):
 ```bash
 dotnet test
 ```
 
 ### 6.2. Executar o Worker (Processador & Simulador em Tempo Real)
-O Worker inicia automaticamente o consumidor assíncrono e o simulador contínuo de eventos, exibindo em tempo real os alertas de fraude e a medição de latência em milissegundos:
+O Worker inicia automaticamente o consumidor assíncrono e o simulador contínuo de eventos, persistindo os registros em tempo real no banco local compartilhado (SQLite em modo WAL de alta performance, simulando o DynamoDB):
 ```bash
 dotnet run --project src/Worker/FraudMonitor.Worker.csproj
 ```
@@ -99,7 +99,9 @@ Em outro terminal, execute a API:
 dotnet run --project src/BackofficeApi/FraudMonitor.BackofficeApi.csproj
 ```
 Acesse a documentação interativa do **Swagger UI**:
-* **URL:** `http://localhost:5052/swagger`
+* **URL:** `http://localhost:5000` (redireciona automaticamente para `/swagger`)
+
+Como o Worker e a API compartilham o armazenamento (`SqliteTransactionStore` com WAL), **todos os alertas de fraude emitidos pelo Worker refletem instantaneamente no Swagger em tempo real**!
 
 #### Autenticação JWT (Role-Based Access Control)
 O endpoint de consulta é protegido com `[Authorize(Roles = "FraudAnalyst")]`. 
@@ -109,21 +111,21 @@ Para autenticar na PoC, utilize as credenciais padrão de analista:
 
 *1. Obter Token JWT:*
 ```bash
-curl -X POST "http://localhost:5052/api/auth/token" \
+curl -X POST "http://localhost:5000/api/auth/token" \
      -H "Content-Type: application/json" \
      -d '{"username":"analyst","password":"itau@2026"}'
 ```
 
 *2. Consultar Alertas Protegidos com Bearer Token:*
 ```bash
-TOKEN=$(curl -s -X POST "http://localhost:5052/api/auth/token" -H "Content-Type: application/json" -d '{"username":"analyst","password":"itau@2026"}' | grep -o '"accessToken":"[^"]*' | cut -d'"' -f4)
+TOKEN=$(curl -s -X POST "http://localhost:5000/api/auth/token" -H "Content-Type: application/json" -d '{"username":"analyst","password":"itau@2026"}' | grep -o '"accessToken":"[^"]*' | cut -d'"' -f4)
 
-# Chamada autenticada com sucesso (HTTP 200)
-curl -X GET "http://localhost:5052/api/fraudalerts?riskLevel=High" \
+# Chamada autenticada com sucesso (HTTP 200) refletindo as transações do Worker
+curl -X GET "http://localhost:5000/api/fraudalerts?riskLevel=High" \
      -H "Authorization: Bearer $TOKEN"
 
 # Chamada sem token (Bloqueada - HTTP 401 Unauthorized)
-curl -i -X GET "http://localhost:5052/api/fraudalerts"
+curl -i -X GET "http://localhost:5000/api/fraudalerts"
 ```
 *No Swagger UI:* Basta clicar no botão **Authorize 🔒**, inserir o token obtido no campo de valor e executar as consultas protegidas diretamente na interface visual.
 

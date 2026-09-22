@@ -25,3 +25,8 @@ Thumbs.db
 
 ## User Secrets & Local AppSettings
 appsettings.*.local.json
+
+## SQLite Database
+*.db
+*.db-shm
+*.db-wal

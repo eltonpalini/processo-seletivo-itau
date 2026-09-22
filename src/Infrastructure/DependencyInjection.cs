@@ -13,7 +13,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
-        // Singleton in-memory store simulating DynamoDB and Redis
+        // Persistent SQLite store simulating DynamoDB across independent OS processes (Worker and BackofficeApi)
+        services.AddSingleton<ITransactionStore, SqliteTransactionStore>();
         services.AddSingleton<InMemoryTransactionStore>();
 
         // SQS simulated asynchronous queue

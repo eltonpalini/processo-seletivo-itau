@@ -6,7 +6,7 @@ namespace FraudMonitor.Infrastructure.Persistence;
 /// <summary>
 /// Simulates NoSQL (DynamoDB) and Cache (Redis) in memory with thread-safety and sub-millisecond latency.
 /// </summary>
-public class InMemoryTransactionStore
+public class InMemoryTransactionStore : ITransactionStore
 {
     private readonly ConcurrentDictionary<string, Transaction> _transactions = new();
     private readonly ConcurrentDictionary<string, ConcurrentBag<Transaction>> _customerHistories = new();

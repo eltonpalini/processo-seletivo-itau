@@ -6,9 +6,9 @@ namespace FraudMonitor.Infrastructure.Services;
 
 public class CustomerHistoryProvider : ICustomerHistoryProvider
 {
-    private readonly InMemoryTransactionStore _store;
+    private readonly ITransactionStore _store;
 
-    public CustomerHistoryProvider(InMemoryTransactionStore store)
+    public CustomerHistoryProvider(ITransactionStore store)
     {
         _store = store;
     }

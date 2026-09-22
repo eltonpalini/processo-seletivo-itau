@@ -7,9 +7,9 @@ namespace FraudMonitor.Infrastructure.Repositories;
 
 public class TransactionWriteRepository : ITransactionWriteRepository
 {
-    private readonly InMemoryTransactionStore _store;
+    private readonly ITransactionStore _store;
 
-    public TransactionWriteRepository(InMemoryTransactionStore store)
+    public TransactionWriteRepository(ITransactionStore store)
     {
         _store = store;
     }
