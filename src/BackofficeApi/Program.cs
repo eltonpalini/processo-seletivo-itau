@@ -99,16 +99,16 @@ try
 
     app.UseSerilogRequestLogging();
 
-    if (app.Environment.IsDevelopment())
+    // Enable Swagger for all environments in this POC / Technical Evaluation
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
     {
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "FraudMonitor Backoffice API v1");
-        });
-    }
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "FraudMonitor Backoffice API v1");
+        c.RoutePrefix = "swagger";
+    });
 
-    app.UseHttpsRedirection();
+    // Automatically redirect root URL (http://localhost:5000/) to Swagger UI
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 
     // Authentication & Authorization middlewares
     app.UseAuthentication();
